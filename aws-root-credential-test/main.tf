@@ -1,7 +1,7 @@
 # Configure the AWS secret backend in Vault with access and secret keys
 resource "vault_aws_secret_backend" "aws" {
-  access_key = var.aws_access_key
-  secret_key = var.aws_secret_key
+  access_key = aws_iam_access_key.vault_admin.id
+  secret_key = aws_iam_access_key.vault_admin.secret
   region     = "ap-southeast-1"
   path       = "aws-dev"
   
