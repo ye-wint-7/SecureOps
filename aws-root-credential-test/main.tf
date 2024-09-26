@@ -24,4 +24,5 @@ resource "vault_aws_secret_backend_role" "role" {
 data "vault_aws_access_credentials" "creds" {
   backend = vault_aws_secret_backend.aws.path
   role    = vault_aws_secret_backend_role.role.name
+  type = "creds"
 }
